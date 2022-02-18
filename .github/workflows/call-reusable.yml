@@ -1,0 +1,13 @@
+name: Re-using Workflow Attempt
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-action-from-other-repo:
+    uses: studuffy-moia/actionz/.github/workflows/reusable.yml@main
+    with:
+      username: "stu"
+    secrets:
+      TOKEN: ${{ secrets.TOKEN}}
